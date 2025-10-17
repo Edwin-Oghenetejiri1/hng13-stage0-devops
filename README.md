@@ -1,14 +1,11 @@
-````markdown
-# HNG13 Stage 0 DevOps Challenge - NGINX Deployment
 
-**Status:** PASS (20/20)
+# HNG13 Stage 0 DevOps Challenge - NGINX Deployment
 
 **Name:** Oghenetejiri Edwin
 **Slack Username:** @Oghenetejiri
 
 **Live Server IP:** http://34.229.153.75/
 
----
 
 ## Project Overview
 
@@ -21,7 +18,6 @@ This project successfully completed the HNG Stage 0 task by deploying a publicly
 * Publicly accessible on the default **HTTP Port 80**.
 * File path successfully configured to the challenge requirement: `/var/www/html/`.
 
----
 
 ## 1. AWS EC2 Instance Provisioning
 
