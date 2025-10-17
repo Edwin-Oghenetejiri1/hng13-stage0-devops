@@ -14,7 +14,7 @@ This project successfully completed the HNG Stage 0 task by deploying a publicly
 
 * Web server deployed using **NGINX**.
 * Custom `index.html` created with the required date format (**DD/MM/YYYY**).
-* Publicly accessible on the default **HTTP Port 80**.
+* Publicly accessible on the default **HTTP Port 80** and **TCP Port 22** (required for access via **EC2 Instance Connect**)
 * File path successfully configured to the challenge requirement: `/var/www/html/`.
 
 
