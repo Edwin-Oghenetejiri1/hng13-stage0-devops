@@ -1,3 +1,4 @@
+````markdown
 # HNG13 Stage 0 DevOps Challenge - NGINX Deployment
 
 **Status:** PASS (20/20)
@@ -47,11 +48,13 @@ sudo amazon-linux-extras install nginx1 -y
 # Start and enable the NGINX service
 sudo systemctl start nginx
 sudo systemctl enable nginx
-B. Deploy Custom HTML Content
+````
+
+### B. Deploy Custom HTML Content
+
 The HTML file was created using the specific date format required for validation.
 
-Bash
-
+```bash
 DEPLOY_DATE_FORMATTED=$(date +"%d/%m/%Y")
 
 sudo tee /var/www/html/index.html <<EOT
@@ -67,11 +70,13 @@ sudo tee /var/www/html/index.html <<EOT
 </body>
 </html>
 EOT
-C. Critical Configuration Fix for File Path
+```
+
+### C. Critical Configuration Fix for File Path
+
 The main NGINX configuration was modified to change the default web root path.
 
-Bash
-
+```bash
 # 1. Manually edit the main NGINX configuration file
 sudo nano /etc/nginx/nginx.conf 
 
@@ -81,12 +86,17 @@ sudo nano /etc/nginx/nginx.conf
 # 3. Test and apply changes
 sudo nginx -t
 sudo systemctl restart nginx
-3. Final Validation
-The site was accessible at the public IP, and the content matched the requirements for a 20/20 PASS.
+```
 
-Final Site Content (index.html):
-HTML
+-----
 
+## 3\. Final Validation
+
+The site was accessible at the public IP, and the content matched the requirements for a **20/20 PASS**.
+
+### Final Site Content (`index.html`):
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,3 +108,4 @@ HTML
     <p>Deployed: 17/10/2025</p>
 </body>
 </html>
+```
