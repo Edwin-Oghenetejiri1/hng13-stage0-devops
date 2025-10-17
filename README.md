@@ -42,6 +42,55 @@ Installation was adapted for Amazon Linux's `yum` package manager.
 sudo yum update -y
 sudo amazon-linux-extras install nginx1 -y
 
+B. Deploy Custom HTML Content
+The HTML file was created using the specific date format required for validation.
+
+DEPLOY_DATE_FORMATTED=$(date +"%d/%m/%Y")
+
+sudo tee /var/www/html/index.html <<EOT
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HNG13 Stage 0 Deployment</title>
+</head>
+<body>
+    <h1>Welcome to DevOps Stage 0 - Oghenetejiri Edwin / @Oghenetejiri</h1>
+    <p>Successfully deployed on AWS</p>
+    <p>Deployed: ${DEPLOY_DATE_FORMATTED}</p>
+</body>
+</html>
+EOT
+
+C. Critical Configuration Fix for File Path
+The main NGINX configuration was modified to change the default web root path.
+
+# 1. Manually edit the main NGINX configuration file
+sudo nano /etc/nginx/nginx.conf 
+
+# 2. Inside the server {} block, the 'root' directive was changed:
+# root /usr/share/nginx/html;  -->  root /var/www/html;
+
+# 3. Test and apply changes
+sudo nginx -t
+sudo systemctl restart nginx
+
+3. Final Validation
+The site was accessible at the public IP, and the content matched the requirements for a 20/20 PASS.
+
+Final Site Content (index.html):
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HNG13 Stage 0 Deployment</title>
+</head>
+<body>
+    <h1>Welcome to DevOps Stage 0 - Oghenetejiri Edwin / @Oghenetejiri</h1>
+    <p>Successfully deployed on AWS</p>
+    <p>Deployed: 17/10/2025</p>
+</body>
+</html>
+
 # Start and enable the NGINX service
 sudo systemctl start nginx
 sudo systemctl enable nginx
