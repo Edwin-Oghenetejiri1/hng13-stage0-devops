@@ -2,7 +2,6 @@
 # HNG13 Stage 0 DevOps Challenge - NGINX Deployment
 
 **Name:** Oghenetejiri Edwin
-**Slack Username:** @Oghenetejiri
 
 **Live Server IP:** http://34.229.153.75/
 
