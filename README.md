@@ -1,6 +1,7 @@
 # HNG13 Stage 0 DevOps Challenge - NGINX Deployment
 
 **Name:** Oghenetejiri Edwin
+
 **Slack Username:** @Oghenetejiri
 
 **Project Description:**
